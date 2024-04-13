@@ -1,0 +1,23 @@
+<html>
+<body>
+<script type="text/javascript">
+function display()
+{
+var x= new XMLHttpRequest();
+var n= document.getElementById('r').value;
+x.open("GET", "newteacher.php?n="+n, true);
+x.send( );
+x.onreadystatechange = function()
+{
+if(x.readyState == 4 && x.status==200)
+{
+document.getElementById("show").innerHTML = x.responseText;
+}
+}
+}
+</script>
+Teacher ID: <input type="text" name='n' id='n'"> <br>
+<button onclick="display()" > Print</button>
+<h1 id="show"> </h1>
+</body>
+</html>
